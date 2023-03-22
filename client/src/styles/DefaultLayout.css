@@ -1,0 +1,78 @@
+#components-layout-demo-custom-trigger .trigger {
+    padding: 0 24px;
+    font-size: 18px;
+    line-height: 64px;
+    cursor: pointer;
+    transition: color 0.3s;
+    
+  }
+  
+#components-layout-demo-custom-trigger .trigger:hover {
+color: #1890ff;
+}
+
+#components-layout-demo-custom-trigger .logo {
+height: 32px;
+margin: 16px;
+background: rgba(255, 255, 255, 0.3);
+}
+
+
+.ant-layout-header{
+    box-shadow: 0 0 3px #ccc;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.ant-layout-content {
+    box-shadow: 0 0 3px #ccc;
+    border-radius: 5px;
+    overflow: auto;
+}
+
+.ant-layout-has-sider {
+padding: 10px !important;
+}
+
+.ant-layout.ant-layout-has-sider{
+height: 100vh;
+}
+
+.ant-layout-sider{
+border-radius: 10px !important;
+padding-top: 10px;
+}
+
+.anticon svg{
+    height: 20px;
+    width: 20px;
+    font-size: 20px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.ant-layout-header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 0;
+
+}
+
+.cart-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 30px;
+    cursor: pointer;
+}
+
+.cart-item p{
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+  
+  
