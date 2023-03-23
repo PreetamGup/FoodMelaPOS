@@ -59,7 +59,7 @@ function Homepage() {
             </div>
             <Row>
             {
-                itemData.filter(item=> item.category===selectedCategory).map(item=>(
+                itemData?.filter(item=> item.category===selectedCategory).map(item=>(
                     <Col xs={24} md={12} lg={6} sm={6}>
                         <ItemList key={item.id} item={item}/>    
                     </Col>
