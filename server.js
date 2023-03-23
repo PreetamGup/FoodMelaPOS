@@ -3,6 +3,7 @@ const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const dotenv = require('dotenv')
+const path = require('path')
 require('colors')
 const connectDb = require('./config/config')
 
@@ -25,8 +26,16 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(morgan('dev'));
 
-//routes
+//Static files
+app.use(express.static(path.join(__dirname , "./client/build")))
 
+app.get("*", function(req, res){
+    res.sendFile(path.join(__dirname, "./client/build/index.html"))
+})
+
+
+
+//routes
 app.use('/api/items', require('./routes/itemRoutes') )
 app.use('/api/users', require('./routes/userRoutes') )
 app.use('/api/bills', require('./routes/billsRoutes') )
