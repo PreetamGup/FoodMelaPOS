@@ -31,8 +31,7 @@ function Homepage() {
                 const {data} = await axios.get('/api/items/get-item')
                 setItemData(data);
 
-                console.log(data);
-                
+                // console.log(data)
             } catch (error) {
                 console.log(error);
             }
@@ -40,6 +39,11 @@ function Homepage() {
 
         getAllItems();
     },[])
+    
+    // console.log(itemData);
+
+    
+
 
     
 
@@ -58,8 +62,8 @@ function Homepage() {
                 ))}
             </div>
             <Row>
-            {
-                itemData?.filter(item=> item.category===selectedCategory).map(item=>(
+            {   itemData &&
+                itemData.filter(item=> item.category===selectedCategory).map(item=>(
                     <Col xs={24} md={12} lg={6} sm={6}>
                         <ItemList key={item.id} item={item}/>    
                     </Col>

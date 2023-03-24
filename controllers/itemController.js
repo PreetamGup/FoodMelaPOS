@@ -4,6 +4,7 @@ const itemModel = require('../models/itemModel')
 const getItemController=async(req, res)=>{
     try {
         const items = await itemModel.find()
+        // console.log(items);
         res.status(200).send(items)
     } catch (error) {
         console.log(error);
@@ -17,6 +18,7 @@ const addItemController=async(req, res)=>{
         await newItem.save();
         res.status(200).send("Item created Successfully")
     } catch (error) {
+        
         res.status(400).send('error', error)
         console.log(error);
     }

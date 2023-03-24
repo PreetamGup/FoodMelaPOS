@@ -9,9 +9,14 @@ const LoginPage = () => {
 const handleSubmit=async(value)=>{
   try {
     const res = await axios.post('/api/users/login', value)
-    message.success("User Login Sucessfully")
-    localStorage.setItem('auth', JSON.stringify(res.data));
-    navigate('/')
+    if(res.data.message!=="Login Fail"){
+      console.log(res);
+      message.success("User Login Sucessfully")
+      localStorage.setItem('auth', JSON.stringify(res.data));
+      navigate('/')
+    }else{
+      message.error("Incorrect credential")
+    }
     
   } catch (error) {
     message.error("Something Went wrong")
